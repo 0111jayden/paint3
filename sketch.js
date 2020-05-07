@@ -11,23 +11,31 @@ function setup(){
   hypnoticBall.shapeColor = "red";
 
 
-  var hypnoticBallPosition = database.ref('ball/position');
+  var hypnoticBallPosition = database.ref('car/position');
   hypnoticBallPosition.on("value", readPosition, showError);
 }
 
 function draw(){
-  background("white");
+  //background("white");
   
     if(keyDown(LEFT_ARROW)){
+      hypnoticBall2 = createSprite(hypnoticBall.x,hypnoticBall.y,10,10);
+      hypnoticBall2.shapeColor = "red";
       writePosition(-1,0);
     }
     else if(keyDown(RIGHT_ARROW)){
+      hypnoticBall2 = createSprite(hypnoticBall.x,hypnoticBall.y,10,10);
+      hypnoticBall2.shapeColor = "red";
       writePosition(1,0);
     }
     else if(keyDown(UP_ARROW)){
+      hypnoticBall2 = createSprite(hypnoticBall.x,hypnoticBall.y,10,10);
+      hypnoticBall2.shapeColor = "red";
       writePosition(0,-1);
     }
     else if(keyDown(DOWN_ARROW)){
+      hypnoticBall2 = createSprite(hypnoticBall.x,hypnoticBall.y,10,10);
+      hypnoticBall2.shapeColor = "red";
       writePosition(0,+1);
     }
     drawSprites();
@@ -35,7 +43,7 @@ function draw(){
 }
 
 function writePosition(x,y){
-  database.ref('ball/position').set({
+  database.ref('car/position').set({
     'x': position.x + x ,
     'y': position.y + y
   })
