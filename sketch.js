@@ -17,7 +17,7 @@ function setup(){
 
 function draw(){
   //background("white");
-  
+  /*
     if(keyDown(LEFT_ARROW)){
       hypnoticBall2 = createSprite(hypnoticBall.x,hypnoticBall.y,10,10);
       hypnoticBall2.shapeColor = "red";
@@ -37,15 +37,19 @@ function draw(){
       hypnoticBall2 = createSprite(hypnoticBall.x,hypnoticBall.y,10,10);
       hypnoticBall2.shapeColor = "red";
       writePosition(0,+1);
-    }
+    }*/
+
+    
+
+
     drawSprites();
   
 }
 
-function writePosition(x,y){
+function writePosition(){
   database.ref('car/position').set({
-    'x': position.x + x ,
-    'y': position.y + y
+    'x': mouseX ,
+    'y': mouseY
   })
 }
 
